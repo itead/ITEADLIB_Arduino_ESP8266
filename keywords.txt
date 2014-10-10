@@ -1,0 +1,53 @@
+#######################################
+# Syntax Coloring Map uralWIFI
+#######################################
+
+#######################################
+# Datatypes (KEYWORD1)
+#######################################
+
+WIFI	KEYWORD1
+DebugSerial	KEYWORD1
+
+#######################################
+# Methods and Functions (KEYWORD2)
+#######################################
+begin	KEYWORD2
+Initialize	KEYWORD2
+ipConfig	KEYWORD2
+confMode	KEYWORD2
+Reset	KEYWORD2
+showAP	KEYWORD2
+showJAP	KEYWORD2
+confJAP	KEYWORD2
+quitAP	KEYWORD2
+showSAP	KEYWORD2
+confSAP	KEYWORD2
+showStatus	KEYWORD2	
+showMux	KEYWORD2
+confMux	KEYWORD2
+newMux	KEYWORD2
+Send	KEYWORD2
+closeMux	KEYWORD2
+showIP	KEYWORD2
+confServer	KEYWORD2
+Initialize	KEYWORD2
+ipConfig	KEYWORD2
+ReceiveMessage	KEYWORD2
+#######################################
+# Constants (LITERAL1)
+#######################################
+OPEN	LITERAL1
+WEP		LITERAL1
+WAP_PSK		LITERAL1
+WAP2_PSK	LITERAL1
+WAP_WAP2_PSK	LITERAL1
+TCP		LITERAL1
+tcp		LITERAL1
+UDP 	LITERAL1
+udp 	LITERAL1
+OPEN 	LITERAL1
+CLOSE 	LITERAL1
+STA 	LITERAL1
+AP		LITERAL1
+AT+STA	LITERAL1
