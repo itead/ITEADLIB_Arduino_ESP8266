@@ -285,7 +285,7 @@ void WIFI::Reset(void)
 String WIFI::showMode()
 {
     String data;
-    _cell.println("AT+CWMODE?");  //发送AT指令
+    _cell.println("AT+CWMODE?");  
 	unsigned long start;
 	start = millis();
     while (millis()-start<2000) {
@@ -330,7 +330,7 @@ String WIFI::showMode()
 bool WIFI::confMode(byte a)
 {
     String data;
-     _cell.print("AT+CWMODE=");  //发送AT指令
+     _cell.print("AT+CWMODE=");  
      _cell.println(String(a));
 	 unsigned long start;
 	start = millis();
@@ -366,7 +366,7 @@ String WIFI::showAP(void)
 {
     String data;
 	_cell.flush();
-    _cell.print("AT+CWLAP\r\n");  //发送AT指令
+    _cell.print("AT+CWLAP\r\n");  
 	delay(1000);
 	while(1);
     unsigned long start;
@@ -387,8 +387,8 @@ String WIFI::showAP(void)
         return "ERROR";
     }
     else{
-       char head[4] = {0x0D,0x0A};   //头部多余字符串
-       char tail[7] = {0x0D,0x0A,0x0D,0x0A};        //尾部多余字符串
+       char head[4] = {0x0D,0x0A};   
+       char tail[7] = {0x0D,0x0A,0x0D,0x0A};        
        data.replace("AT+CWLAP","");
        data.replace("OK","");
        data.replace("+CWLAP","WIFI");
@@ -411,7 +411,7 @@ String WIFI::showAP(void)
 String WIFI::showJAP(void)
 {
 	_cell.flush();
-    _cell.println("AT+CWJAP?");  //发送AT指令
+    _cell.println("AT+CWJAP?");  
       String data;
 	  unsigned long start;
 	start = millis();
@@ -426,8 +426,8 @@ String WIFI::showJAP(void)
            break;
        }
     }
-      char head[4] = {0x0D,0x0A};   //头部多余字符串
-      char tail[7] = {0x0D,0x0A,0x0D,0x0A};        //尾部多余字符串
+      char head[4] = {0x0D,0x0A};   
+      char tail[7] = {0x0D,0x0A,0x0D,0x0A};        
       data.replace("AT+CWJAP?","");
       data.replace("+CWJAP","AP");
       data.replace("OK","");
@@ -464,7 +464,7 @@ boolean WIFI::confJAP(String ssid , String pwd)
 
     unsigned long start;
 	start = millis();
-    while (millis()-start<3000) {                            //当串口有完成数据返回时，结束语句
+    while (millis()-start<3000) {                            
         if(_cell.find("OK")==true)
         {
 		   return true;
@@ -488,7 +488,7 @@ boolean WIFI::quitAP(void)
     _cell.println("AT+CWQAP");
     unsigned long start;
 	start = millis();
-    while (millis()-start<3000) {                            //当串口有完成数据返回时，结束语句
+    while (millis()-start<3000) {                            
         if(_cell.find("OK")==true)
         {
 		   return true;
@@ -508,7 +508,7 @@ boolean WIFI::quitAP(void)
 ***************************************************************************/
 String WIFI::showSAP()
 {
-    _cell.println("AT+CWSAP?");  //发送AT指令
+    _cell.println("AT+CWSAP?");  
       String data;
       unsigned long start;
 	start = millis();
@@ -523,8 +523,8 @@ String WIFI::showSAP()
            break;
        }
     }
-      char head[4] = {0x0D,0x0A};   //头部多余字符串
-      char tail[7] = {0x0D,0x0A,0x0D,0x0A};        //尾部多余字符串
+      char head[4] = {0x0D,0x0A};   
+      char tail[7] = {0x0D,0x0A,0x0D,0x0A};        
       data.replace("AT+CWSAP?","");
       data.replace("+CWSAP","mySAP");
       data.replace("OK","");
@@ -545,7 +545,7 @@ String WIFI::showSAP()
 
 boolean WIFI::confSAP(String ssid , String pwd , byte chl , byte ecn)
 {
-    _cell.print("AT+CWSAP=");  //发送AT指令
+    _cell.print("AT+CWSAP=");  
     _cell.print("\"");     //"ssid"
     _cell.print(ssid);
     _cell.print("\"");
@@ -563,7 +563,7 @@ boolean WIFI::confSAP(String ssid , String pwd , byte chl , byte ecn)
     _cell.println(String(ecn));
 	unsigned long start;
 	start = millis();
-    while (millis()-start<3000) {                            //当串口有完成数据返回时，结束语句
+    while (millis()-start<3000) {                            
         if(_cell.find("OK")==true )
         {
            return true;
@@ -597,7 +597,7 @@ boolean WIFI::confSAP(String ssid , String pwd , byte chl , byte ecn)
 
 String WIFI::showStatus(void)
 {
-    _cell.println("AT+CIPSTATUS");  //发送AT指令
+    _cell.println("AT+CIPSTATUS");  
       String data;
     unsigned long start;
 	start = millis();
@@ -613,8 +613,8 @@ String WIFI::showStatus(void)
        }
     }
 
-          char head[4] = {0x0D,0x0A};   //头部多余字符串
-          char tail[7] = {0x0D,0x0A,0x0D,0x0A};        //尾部多余字符串
+          char head[4] = {0x0D,0x0A};   
+          char tail[7] = {0x0D,0x0A,0x0D,0x0A};        
           data.replace("AT+CIPSTATUS","");
           data.replace("OK","");
 		  data.replace(tail,"");
@@ -634,7 +634,7 @@ String WIFI::showStatus(void)
 String WIFI::showMux(void)
 {
     String data;
-    _cell.println("AT+CIPMUX?");  //发送AT指令
+    _cell.println("AT+CIPMUX?");  
 
       unsigned long start;
 	start = millis();
@@ -649,8 +649,8 @@ String WIFI::showMux(void)
            break;
        }
     }
-          char head[4] = {0x0D,0x0A};   //头部多余字符串
-          char tail[7] = {0x0D,0x0A,0x0D,0x0A};        //尾部多余字符串
+          char head[4] = {0x0D,0x0A};   
+          char tail[7] = {0x0D,0x0A,0x0D,0x0A};        
           data.replace("AT+CIPMUX?","");
           data.replace("+CIPMUX","showMux");
           data.replace("OK","");
@@ -674,10 +674,10 @@ String WIFI::showMux(void)
 boolean WIFI::confMux(boolean a)
 {
 	_cell.print("AT+CIPMUX=");
-	_cell.println(a);           //发送AT指令
+	_cell.println(a);           
 	unsigned long start;
 	start = millis();
-	while (millis()-start<3000) {                            //当串口有完成数据返回时，结束语句
+	while (millis()-start<3000) {                            
         if(_cell.find("OK")==true )
         {
            return true;
@@ -815,7 +815,7 @@ boolean WIFI::Send(String str)
     unsigned long start;
 	start = millis();
 	bool found;
-	while (millis()-start<5000) {                            //当串口有完成数据返回时，结束语句
+	while (millis()-start<5000) {                            
         if(_cell.find(">")==true )
         {
 			found = true;
@@ -869,7 +869,7 @@ boolean WIFI::Send(byte id, String str)
     unsigned long start;
 	start = millis();
 	bool found;
-	while (millis()-start<5000) {                            //当串口有完成数据返回时，结束语句
+	while (millis()-start<5000) {                          
         if(_cell.find(">")==true )
         {
 			found = true;
@@ -967,7 +967,7 @@ String WIFI::showIP(void)
     //DBG("AT+CIFSR\r\n");
 	for(int a=0; a<3;a++)
 	{
-	_cell.println("AT+CIFSR");  //发送AT指令	
+	_cell.println("AT+CIFSR");  
 	start = millis();
 	while (millis()-start<3000) {
      while(_cell.available()>0)
@@ -988,8 +988,8 @@ String WIFI::showIP(void)
   }
 	//DBG(data);
 	//DBG("\r\n");
-    char head[4] = {0x0D,0x0A};   //头部多余字符串
-    char tail[7] = {0x0D,0x0D,0x0A};        //尾部多余字符串
+    char head[4] = {0x0D,0x0A};   
+    char tail[7] = {0x0D,0x0D,0x0A};        
     data.replace("AT+CIFSR","");
     data.replace(tail,"");
     data.replace(head,"");
@@ -1014,7 +1014,7 @@ String WIFI::showIP(void)
 
 boolean WIFI::confServer(byte mode, int port)
 {
-    _cell.print("AT+CIPSERVER=");  //发送AT指令
+    _cell.print("AT+CIPSERVER=");  
     _cell.print(String(mode));
     _cell.print(",");
     _cell.println(String(port));
