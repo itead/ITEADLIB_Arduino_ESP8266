@@ -73,7 +73,7 @@ void setup()
   String wifistring  = wifi.showJAP();
   while(wifistring == "") {
     delay(200);
-    wifistring = wifi.showIP();
+    wifistring = wifi.showJAP();
   }
 
   String ipstring = wifi.showIP();
