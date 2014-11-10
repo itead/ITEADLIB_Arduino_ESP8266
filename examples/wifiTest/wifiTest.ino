@@ -7,6 +7,9 @@ When you use with UNO board, uncomment the follow line in uartWIFI.h.
 When you use with MEGA board, uncomment the follow line in uartWIFI.h.
 #define MEGA
 
+When you use with Leonardo board, uncomment the follow line in uartWIFI.h.
+#define LEO
+
 Connection:
 When you use it with UNO board, the connection should be like these:
 ESP8266_TX->D0
@@ -65,14 +68,22 @@ void setup()
   {
     DebugSerial.println("Init error");
   }
-  delay(8000);  //make sure the module can have enough time to get an IP address 
-  String ipstring  = wifi.showIP();
-  DebugSerial.println("My IP address:");
-  DebugSerial.println(ipstring);		//show the ip address of module
-  
+  DebugSerial.print("Connecting...");
+
   String wifistring  = wifi.showJAP();
-  DebugSerial.println(wifistring);  	//show the name of current wifi access port
-  
+  while(wifistring == "") {
+    delay(200);
+    wifistring = wifi.showIP();
+  }
+
+  String ipstring = wifi.showIP();
+  while(ipstring == "") {
+    delay(200);
+    ipstring = wifi.showIP();
+  }
+
+  DebugSerial.println(wifistring); //show the name of current wifi access port, "AP" label is included here
+  DebugSerial.print("IP Address:"); DebugSerial.println(ipstring); //show the ip address of module
 }
 void loop()
 {
