@@ -1,9 +1,7 @@
 #include "uartWIFI.h"
 
 #ifdef UNO
-
 SoftwareSerial mySerial(_DBG_RXPIN_,_DBG_TXPIN_);
-
 #endif
 
 #ifdef DEBUG
@@ -18,6 +16,12 @@ int chlID;		//client id(0-4)
 
 void WIFI::begin(void)
 {
+	#ifdef LEO
+	while (!Serial) { 
+		; //wait for Leonardo's CDC serial to be ready
+	}
+	#endif
+	
 	boolean result = false;
 	_cell.begin(115200);	//The default baud rate of ESP8266 is 115200
 	
