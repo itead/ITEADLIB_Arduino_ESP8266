@@ -81,7 +81,7 @@ class WIFI
 {
   public:
 
-    void begin(void);
+    bool begin(void);
 	
 	//Initialize port
 	bool Initialize(byte mode, String ssid, String pwd, byte chl = 1, byte ecn = 2);
