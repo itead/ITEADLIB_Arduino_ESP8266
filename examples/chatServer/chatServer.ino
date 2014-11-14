@@ -60,8 +60,11 @@ extern int chlID;	//client id(0-4)
 
 void setup()
 {
-  
-  wifi.begin();
+  if(!wifi.begin())
+  {
+  	DebugSerial.println("Begin error");
+  	while(1);
+  }
   bool b = wifi.Initialize(STA, SSID, PASSWORD);
   if(!b)
   {
