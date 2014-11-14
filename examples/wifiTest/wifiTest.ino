@@ -28,6 +28,13 @@ ESP8266_CH_PD->3.3V
 ESP8266_VCC->3.3V
 ESP8266_GND->GND
 
+When you use it with Leonardo board, the connection should be like these:
+ESP8266_TX->RX1(D0)
+ESP8266_RX->TX1(D1)
+ESP8266_CH_PD->3.3V
+ESP8266_VCC->3.3V
+ESP8266_GND->GND
+
 When you want to output the debug information, please use DebugSerial. For example,
 
 DebugSerial.println("hello");
