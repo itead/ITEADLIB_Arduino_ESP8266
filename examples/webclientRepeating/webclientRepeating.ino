@@ -67,7 +67,10 @@ const unsigned long postingInterval = 8*1000;  // delay between updates, in mill
 void setup()
 {
   
-  wifi.begin();
+  if(!wifi.begin())
+  {
+  	DebugSerial.println("Begin error");
+  }
   bool b = wifi.Initialize(STA, SSID, PASSWORD);
   if(!b)
   {
