@@ -7,6 +7,10 @@ When you use with UNO board, uncomment the follow line in uartWIFI.h.
 When you use with MEGA board, uncomment the follow line in uartWIFI.h.
 
 	#define MEGA
+	
+When you use with LEONARDO board, uncomment the following line in uartWIFI.h:
+
+	#define LEO
 
 ## Connection: ##
 When you use it with UNO board, the connection should be like these:
