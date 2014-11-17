@@ -81,7 +81,7 @@ class WIFI
 {
   public:
 
-    void begin(void);
+    bool begin(void);
 	
 	//Initialize port
 	bool Initialize(byte mode, String ssid, String pwd, byte chl = 1, byte ecn = 2);
@@ -115,7 +115,7 @@ class WIFI
     void closeMux(byte id); //close tcp or udp (multiple connection mode)
     String showIP(void);    //show the current ip address
     boolean confServer(byte mode, int port);  //set the parameter of server
-	
+    boolean setTimeout(int timeout); // Set the CIPSERVER timeout
 	String m_rev;
 
 };

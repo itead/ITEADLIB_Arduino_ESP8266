@@ -69,7 +69,10 @@ WIFI wifi;
 void setup()
 {
   
-  wifi.begin();
+  if(!wifi.begin())
+  {
+  	DebugSerial.println("Begin error");
+  }
   bool b = wifi.Initialize(STA, SSID, PASSWORD);
   if(!b)
   {
