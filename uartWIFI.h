@@ -13,7 +13,7 @@ V1.0	released the first version of ESP8266 library
 */
 
 
-//#define DEBUG //uncomment to enable debugging
+#define DEBUG //uncomment to enable debugging
 //#define UNO			//uncomment this line when you use it with UNO board or Mini
 //#define MEGA		//uncomment this line when you use it with MEGA board
 #define LEO		//uncomment this line when you use it with Leonardo or Micro board
