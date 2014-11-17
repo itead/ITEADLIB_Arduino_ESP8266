@@ -1135,25 +1135,13 @@ boolean WIFI::setTimeout(int timeout)
 /*************************************************************************
 //print and println
 		
-		param:	text to send either as string or as F("value")
+		param:	text to send either as string
 
 ***************************************************************************/
-void WIFI::print(const __FlashStringHelper *ifsh)
-{
-	DBG(ifsh);
-	_cell.print(ifsh);
-}
-
 void WIFI::print(const String &s)
 {
 	DBG(s);
 	_cell.print(s);
-}
-
-void WIFI::println(const __FlashStringHelper *ifsh)
-{
-	DBGLN(ifsh);
-	_cell.println(ifsh);
 }
 
 void WIFI::println(const String &s)
