@@ -1041,3 +1041,36 @@ boolean WIFI::confServer(byte mode, int port)
   }
   return found;
 }
+
+/*************************************************************************
+//// Set the CIPSERVER timeout.
+	timeout:	<timeout>
+		
+	return:
+		true	-	successfully
+		false	-	unsuccessfully
+
+***************************************************************************/
+
+boolean WIFI::setTimeout(int timeout)
+{
+	_cell.print("AT+CIPSTO=");
+	_cell.println(String(timeout));
+	
+	String data;
+	unsigned long start;
+	start = millis();
+	boolean found = false;
+	while(millis()-start<3000){
+		if(_cell.available()>0)
+		{
+			data += _cell.read();
+		}
+		if(data.indexOf("OK")!=-1 || data.indexOf("no change")!=-1)
+		{
+			found = true;
+			break;
+		}
+	}
+	return found;
+}
