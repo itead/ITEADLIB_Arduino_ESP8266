@@ -115,7 +115,9 @@ class WIFI
 
 	private:
 	
+		void print(const __FlashStringHelper *);
 		void print(const String &);
+		void println(const __FlashStringHelper *);
 		void println(const String &);
 
 };
