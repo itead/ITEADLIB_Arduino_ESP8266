@@ -121,7 +121,7 @@ void loop()
         cmd += "<br />\r\n";
       
       }     
-      cmd += "<html>\r\n";
+      cmd += "</html>\r\n";
 
         wifi.Send(chlID,cmd);
         delay(300);
