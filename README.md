@@ -7,6 +7,14 @@ When you use with UNO board, uncomment the follow line in uartWIFI.h.
 When you use with MEGA board, uncomment the follow line in uartWIFI.h.
 
 	#define MEGA
+	
+When you use with LEONARDO board, uncomment the following line in uartWIFI.h:
+
+	#define LEO
+
+When you use with Leonardo board, uncomment the follow line in uartWIFI.h.
+
+	#define LEO
 
 ## Connection: ##
 When you use it with UNO board, the connection should be like these:
@@ -30,6 +38,18 @@ When you use it with MEGA board, the connection should be like these:
 ESP8266_TX->RX1(D19)
 
 ESP8266_RX->TX1(D18)
+
+ESP8266_CH_PD->3.3V
+
+ESP8266_VCC->3.3V
+
+ESP8266_GND->GND
+
+When you use it with Leonardo board, the connection should be like these:
+
+ESP8266_TX->RX1(D0)
+
+ESP8266_RX->TX1(D1)
 
 ESP8266_CH_PD->3.3V
 
