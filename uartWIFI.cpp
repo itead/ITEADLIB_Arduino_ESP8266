@@ -19,14 +19,14 @@ int chlID;		//client id(0-4)
 void WIFI::begin(void)
 {
 	boolean result = false;
-	_cell.begin(115200);	//The default baud rate of ESP8266 is 115200
+	_cell.begin(9600);	//The default baud rate of ESP8266 is 115200
 	
 	DebugSerial.begin(debugBaudRate);		//The default baud rate for debugging is 9600
 	_cell.flush();
 	_cell.setTimeout(3000);
 	_cell.println("AT+RST");
 	DBG("AT+RST\r\n");
-	result = _cell.find("ready");
+	result = _cell.find("eady");
 	if(result)
 		DBG("Module is ready\r\n");
     else
