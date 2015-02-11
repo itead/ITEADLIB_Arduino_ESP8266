@@ -1,3 +1,8 @@
+# Warning!
+
+This library has been discarded. A new library named WeeESP8266 is recommended, which is more easy-to-use for users.
+WeeESP8266 can be downloaded at <https://github.com/itead/ITEADLIB_Arduino_WeeESP8266>. 
+
 # ESP8266 library #
 
 When you use with UNO board, uncomment the follow line in uartWIFI.h.
